@@ -1,0 +1,60 @@
+# Núcleo de IA y modelos
+tensorflow==2.15.0
+keras==2.15.0
+ml-dtypes==0.2.0
+numpy==1.26.4
+protobuf==3.20.3
+tensorboard==2.15.1
+wrapt==1.14.1
+
+# Backend FastAPI
+fastapi
+uvicorn
+python-dotenv
+pydantic
+sqlalchemy
+motor
+psycopg2-binary
+
+# Infraestructura
+redis
+httpx
+aiohttp
+requests
+alembic
+passlib
+python-jose
+python-multipart
+
+# CI/CD y DevOps
+pytest
+email-validator
+
+# Integraciones
+stripe
+web3
+openai
+moviepy
+
+# Orquestación y entrenamiento
+optuna
+mlflow
+scikit-learn
+pandas
+scipy
+plotly
+celery
+ray
+schedule
+
+# Conexiones con Binance y exchanges
+ccxt
+python-binance
+tradingview-ta
+
+# Visualización y front (Dash por si lo usás también)
+matplotlib
+dash
+
+# Seguridad
+cryptography
