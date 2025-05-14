@@ -23,6 +23,13 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Deploy to Railway
-        run: curl -X POST ${{ secrets.RAILWAY_DEPLOY_HOOK }}
+- name: Notificar en Discord
+  run: |
+    curl -H "Content-Type: application/json" \
+         -X POST \
+         -d "{\"content\": \"✅ ZIMA backend deployeado exitosamente en Railway.\"}" \
+         ${{ secrets.DISCORD_WEBHOOK_URL }}
+
+
+${{ secrets.RAILWAY_DEPLOY_HOOK }}
 
