@@ -29,7 +29,10 @@ requests==2.31.0
 redis==5.0.4
 
 # Web3 (DAO/Gobernanza)
-web3==6.18.0
+web3==5.31.4
+eth-typing==2.2.2
+eth-utils==2.1.0
+
 
 # Tests & CI/CD
 pytest==8.3.1
