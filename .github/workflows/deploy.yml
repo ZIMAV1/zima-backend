@@ -1,27 +1,28 @@
-name: Deploy backend ZIMA
+name: Deploy to Railway
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
+  workflow_dispatch:
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout código
+      - name: Checkout repo
         uses: actions/checkout@v3
 
-      - name: Configurar Python
+      - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.11'
+          python-version: "3.11"
 
-      - name: Instalar dependencias
+      - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Confirmar deploy exitoso
-        run: echo "✅ Backend de ZIMA listo para Railway"
+      - name: Deploy to Railway
+        run: curl -X POST ${{ secrets.RAILWAY_DEPLOY_HOOK }}
+
