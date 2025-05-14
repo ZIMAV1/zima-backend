@@ -443,7 +443,7 @@ pytz==2025.2
     #   pandas
 pyunormalize==16.0.0
     # via web3
-pywin32==310
+
     # via
     #   docker
     #   web3
