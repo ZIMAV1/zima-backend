@@ -12,3 +12,4 @@ stripe
 jinja2 
 python-multipart 
 pytest
+httpx
