@@ -4,14 +4,19 @@
 import sys
 import os
 
-# Agrega la raíz del proyecto al path
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+# Agrega el directorio raíz del backend al path
+sys.path.append(os.path.dirname(os.path.abspath(__file__ + "/..")))
 
-from fastapi.testclient import TestClient
 from main import app
 
-client = TestClient(app)
 
-def test_health_check():
-    response = client.get("/")
-    assert response.status_code in [200, 404]  # puede que no exista "/", pero no debe tirar error de server
+import pytest
+from httpx import AsyncClient
+from main import app
+
+@pytest.mark.asyncio
+async def test_health_check():
+    async with AsyncClient(app=app, base_url="http://test") as ac:
+        response = await ac.get("/metrics")
+        assert response.status_code == 200
+
