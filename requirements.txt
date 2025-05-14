@@ -1,16 +1,36 @@
-fastapi 
-uvicorn[standard] 
-python-dotenv 
-pydantic 
-sqlalchemy 
-psycopg2-binary 
-python-jose 
-passlib[bcrypt] 
-aiohttp 
-motor 
-stripe 
-jinja2 
-python-multipart 
-pytest
-httpx
-pydantic[email]
+# FastAPI Core
+fastapi==0.110.0
+uvicorn[standard]==0.29.0
+
+# Database
+sqlalchemy==2.0.29
+asyncpg==0.29.0
+psycopg2-binary==2.9.9
+motor==3.4.0  # MongoDB async
+
+# Security
+python-jose==3.3.0
+passlib[bcrypt]==1.7.4
+bcrypt==4.1.2
+
+# Validation & Pydantic
+pydantic==2.6.4
+email-validator==2.1.1  # Necesario para campos EmailStr
+
+# Stripe & APIs
+stripe==9.7.0
+httpx==0.27.0
+
+# Dev & Util
+python-dotenv==1.0.1
+requests==2.31.0
+
+# Redis (opcional si usás Celery o caching)
+redis==5.0.4
+
+# Web3 (DAO/Gobernanza)
+web3==6.18.0
+
+# Tests & CI/CD
+pytest==8.3.1
+anyio==4.3.0
