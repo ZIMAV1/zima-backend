@@ -1,0 +1,13 @@
+fastapi 
+uvicorn[standard] 
+python-dotenv 
+pydantic 
+sqlalchemy 
+psycopg2-binary 
+python-jose 
+passlib[bcrypt] 
+aiohttp 
+motor 
+stripe 
+jinja2 
+python-multipart 
